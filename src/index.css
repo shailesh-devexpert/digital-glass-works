@@ -2,41 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* IT Services Company Design System - Material Design with Glass Morphism */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Background and surfaces */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --surface: 240 10% 6%;
+    --surface-variant: 240 6% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card and elevated surfaces */
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --glass: 240 10% 15%;
+    --glass-border: 240 10% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover and floating elements */
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary brand colors - Modern tech blue */
+    --primary: 200 98% 39%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 200 100% 60%;
+    --primary-muted: 200 98% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary accent - Cyan/Teal */
+    --secondary: 180 100% 25%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-glow: 180 100% 40%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted and neutral colors */
+    --muted: 240 6% 10%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors - Purple for highlights */
+    --accent: 270 95% 75%;
+    --accent-foreground: 240 10% 3.9%;
 
+    /* Status colors */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Interactive elements */
+    --border: 240 6% 20%;
+    --input: 240 6% 10%;
+    --ring: 200 98% 39%;
 
-    --radius: 0.5rem;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--surface)));
+    --gradient-glass: linear-gradient(135deg, hsla(var(--glass), 0.1), hsla(var(--glass), 0.05));
+
+    /* Shadows and effects */
+    --shadow-glass: 0 8px 32px hsla(0, 0%, 0%, 0.37);
+    --shadow-glow: 0 0 40px hsla(var(--primary-glow), 0.3);
+    --shadow-elevation: 0 4px 16px hsla(0, 0%, 0%, 0.25);
+
+    /* Animation and transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +134,79 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
+}
+
+@layer components {
+  /* Glass morphism button styles */
+  .btn-glass {
+    @apply relative overflow-hidden backdrop-blur-md border border-glass-border;
+    background: var(--gradient-glass);
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-glass::before {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    content: '';
+    background: var(--gradient-primary);
+  }
+
+  .btn-glass:hover::before {
+    @apply opacity-20;
+  }
+
+  .btn-glass:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Glass card styles */
+  .glass-card {
+    @apply backdrop-blur-md border border-glass-border;
+    background: var(--gradient-glass);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Smooth reveal animation */
+  .reveal {
+    @apply opacity-0 translate-y-8;
+    animation: reveal 0.6s ease-out forwards;
+  }
+
+  @keyframes reveal {
+    to {
+      @apply opacity-100 translate-y-0;
+    }
+  }
+
+  /* Stagger delay for multiple elements */
+  .reveal-delay-100 { animation-delay: 0.1s; }
+  .reveal-delay-200 { animation-delay: 0.2s; }
+  .reveal-delay-300 { animation-delay: 0.3s; }
+  .reveal-delay-400 { animation-delay: 0.4s; }
 }
