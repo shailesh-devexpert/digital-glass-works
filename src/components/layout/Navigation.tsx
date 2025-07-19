@@ -14,7 +14,10 @@ const Navigation = () => {
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
     { href: '/portfolio', label: 'Portfolio' },
-    { href: '/contact', label: 'Contact' }
+    { href: '/contact', label: 'Contact' },
+    { href: '/terms', label: 'Terms' },
+    { href: '/refund', label: 'Refund' },
+    { href: '/shipping', label: 'Shipping' }
   ];
 
   return (
@@ -27,7 +30,7 @@ const Navigation = () => {
               <Code className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-colors"></div>
             </div>
-            <span className="text-xl font-bold gradient-text">TechSolutions</span>
+            <span className="text-xl font-bold gradient-text">GD Services</span>
           </Link>
 
           {/* Desktop Navigation */}

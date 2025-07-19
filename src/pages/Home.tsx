@@ -43,7 +43,7 @@ const Home = () => {
       name: 'Sarah Johnson',
       company: 'TechCorp Inc.',
       role: 'CEO',
-      content: 'TechSolutions transformed our digital presence completely. Their expertise in web development and SEO helped us increase our online revenue by 300%.',
+      content: 'GD Services transformed our digital presence completely. Their expertise in web development and SEO helped us increase our online revenue by 300%.',
       rating: 5,
     },
     {
