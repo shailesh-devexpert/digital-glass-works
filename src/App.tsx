@@ -12,6 +12,12 @@ import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import Refund from "./pages/Refund";
 import Shipping from "./pages/Shipping";
+import WebDevelopment from "./pages/services/WebDevelopment";
+import MobileApps from "./pages/services/MobileApps";
+import SEO from "./pages/services/SEO";
+import DigitalMarketing from "./pages/services/DigitalMarketing";
+import ShopifyDevelopment from "./pages/services/ShopifyDevelopment";
+import CyberSecurity from "./pages/services/CyberSecurity";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +33,12 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/web-development" element={<WebDevelopment />} />
+            <Route path="/services/mobile-apps" element={<MobileApps />} />
+            <Route path="/services/seo" element={<SEO />} />
+            <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/services/shopify-development" element={<ShopifyDevelopment />} />
+            <Route path="/services/cyber-security" element={<CyberSecurity />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/terms" element={<Terms />} />

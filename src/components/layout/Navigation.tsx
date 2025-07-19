@@ -12,12 +12,20 @@ const Navigation = () => {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
+    { 
+      href: '/services', 
+      label: 'Services',
+      submenu: [
+        { href: '/services/web-development', label: 'Web Development' },
+        { href: '/services/mobile-apps', label: 'Mobile Apps' },
+        { href: '/services/seo', label: 'SEO Services' },
+        { href: '/services/digital-marketing', label: 'Digital Marketing' },
+        { href: '/services/shopify-development', label: 'Shopify Development' },
+        { href: '/services/cyber-security', label: 'Cyber Security' }
+      ]
+    },
     { href: '/portfolio', label: 'Portfolio' },
-    { href: '/contact', label: 'Contact' },
-    { href: '/terms', label: 'Terms' },
-    { href: '/refund', label: 'Refund' },
-    { href: '/shipping', label: 'Shipping' }
+    { href: '/contact', label: 'Contact' }
   ];
 
   return (

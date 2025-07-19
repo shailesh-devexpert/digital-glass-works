@@ -3,6 +3,7 @@ import { ExternalLink, Github, Filter, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { projects } from '@/data/projects';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -13,75 +14,7 @@ const Portfolio = () => {
     { id: 'mobile', label: 'Mobile Apps' },
     { id: 'ecommerce', label: 'E-commerce' },
     { id: 'marketing', label: 'Digital Marketing' },
-  ];
-
-  const projects = [
-    {
-      id: 1,
-      title: 'TechCorp Website Redesign',
-      category: 'web',
-      description: 'Complete website redesign for a Fortune 500 tech company with modern React architecture.',
-      image: '🌐',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-      results: ['300% increase in conversions', '50% faster loading times', '95% user satisfaction'],
-      link: '#',
-      github: '#',
-    },
-    {
-      id: 2,
-      title: 'HealthTracker Mobile App',
-      category: 'mobile',
-      description: 'iOS and Android health tracking app with real-time data synchronization.',
-      image: '📱',
-      technologies: ['React Native', 'Firebase', 'Redux', 'GraphQL'],
-      results: ['100K+ downloads', '4.8/5 star rating', 'Featured in App Store'],
-      link: '#',
-      github: '#',
-    },
-    {
-      id: 3,
-      title: 'E-commerce Platform',
-      category: 'ecommerce',
-      description: 'Custom e-commerce solution with advanced inventory management and analytics.',
-      image: '🛒',
-      technologies: ['Next.js', 'Stripe', 'MongoDB', 'AWS'],
-      results: ['$2M+ in sales', '99.9% uptime', '40% increase in AOV'],
-      link: '#',
-      github: '#',
-    },
-    {
-      id: 4,
-      title: 'Digital Marketing Campaign',
-      category: 'marketing',
-      description: 'Multi-channel digital marketing campaign for SaaS startup launch.',
-      image: '📈',
-      technologies: ['Google Ads', 'Facebook Ads', 'Analytics', 'Automation'],
-      results: ['500% ROI', '10K new customers', '250% brand awareness'],
-      link: '#',
-      github: '#',
-    },
-    {
-      id: 5,
-      title: 'FinTech Dashboard',
-      category: 'web',
-      description: 'Real-time financial dashboard with advanced data visualization.',
-      image: '💰',
-      technologies: ['Vue.js', 'D3.js', 'Python', 'PostgreSQL'],
-      results: ['Real-time processing', 'Regulatory compliance', 'Enterprise security'],
-      link: '#',
-      github: '#',
-    },
-    {
-      id: 6,
-      title: 'Restaurant Chain App',
-      category: 'mobile',
-      description: 'Mobile ordering app with loyalty program and location-based features.',
-      image: '🍔',
-      technologies: ['Flutter', 'Firebase', 'Payments', 'Maps API'],
-      results: ['30% increase in orders', 'Seamless user experience', 'Integrated loyalty'],
-      link: '#',
-      github: '#',
-    },
+    { id: 'shopify', label: 'Shopify Development' },
   ];
 
   const filteredProjects = activeFilter === 'all' 

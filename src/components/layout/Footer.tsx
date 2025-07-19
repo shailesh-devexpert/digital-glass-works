@@ -39,7 +39,7 @@ const Footer = () => {
                 <Code className="h-8 w-8 text-primary" />
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl"></div>
               </div>
-              <span className="text-xl font-bold gradient-text">TechSolutions</span>
+              <span className="text-xl font-bold gradient-text">GD Services</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-sm">
               Empowering businesses with cutting-edge technology solutions. 
@@ -123,14 +123,14 @@ const Footer = () => {
               © {currentYear} TechSolutions. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
+              <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Terms & Conditions
               </Link>
-              <Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
+              <Link to="/refund" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Refund Policy
               </Link>
-              <Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Cookie Policy
+              <Link to="/shipping" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Shipping Policy
               </Link>
             </div>
           </div>
